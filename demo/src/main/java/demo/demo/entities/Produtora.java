@@ -13,15 +13,15 @@ public class Produtora {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_produtora;
+  public int idProdutora;
 
   public String nome;
-  public String endereco_matriz;
+  public String enderecoMatriz;
 
 
-  public Produtora (int id, String nome, String endereco_matriz){
-    this.id_produtora = id;
+  public Produtora (int id, String nome, String enderecoMatriz){
+    this.idProdutora = id;
     this.nome = nome;
-    this.endereco_matriz = endereco_matriz;
+    this.enderecoMatriz = enderecoMatriz;
   }
 }

@@ -11,12 +11,12 @@ import jakarta.persistence.Table;
 public class Genero {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_genero;
+  public int idGenero;
 
   public String nome;
 
   public Genero(int id, String nome) {
-    this.id_genero = id;
+    this.idGenero = id;
     this.nome = nome;
   }
 }

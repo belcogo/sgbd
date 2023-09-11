@@ -11,16 +11,16 @@ import jakarta.persistence.Table;
 public class Artista {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_artista;
+  public int idArtista;
 
-  public String nome_completo;
-  public String nome_artistico;
+  public String nomeCompleto;
+  public String nomeArtistico;
   public String bio;
 
-  public Artista(int id, String nome_completo, String nome_artistico, String bio) {
-    this.id_artista = id;
-    this.nome_completo = nome_completo;
-    this.nome_artistico = nome_artistico;
+  public Artista(int id, String nomeCompleto, String nomeArtistico, String bio) {
+    this.idArtista = id;
+    this.nomeCompleto = nomeCompleto;
+    this.nomeArtistico = nomeArtistico;
     this.bio = bio;
   }
 }

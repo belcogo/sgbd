@@ -11,14 +11,14 @@ import jakarta.persistence.Table;
 public class Gravadora {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_gravadora;  
+  public int idGravadora;  
 
   public String nome;
-  public String endereco_matriz;
+  public String enderecoMatriz;
 
-  public Gravadora (int id, String nome, String endereco_matriz){
-    this.id_gravadora = id;
+  public Gravadora (int id, String nome, String enderecoMatriz){
+    this.idGravadora = id;
     this.nome = nome;
-    this.endereco_matriz = endereco_matriz;
+    this.enderecoMatriz = enderecoMatriz;
   }
 }

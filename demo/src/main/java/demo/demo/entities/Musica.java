@@ -13,21 +13,21 @@ import jakarta.persistence.Table;
 public class Musica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id_musica;
+    public int idMusica;
 
     public String nome;
     public String tempo;
 
     @ManyToOne
-    @JoinColumn(name = "id_discografia")
+    @JoinColumn(name = "idDiscografia")
     private Discografia discografia;
 
     @ManyToOne
-    @JoinColumn(name = "id_genero")
+    @JoinColumn(name = "idGenero")
     private Genero genero;
 
     public Musica (int id, String nome, String tempo){
-        this.id_musica = id;
+        this.idMusica = id;
         this.nome = nome;
         this.tempo = tempo;
     }

@@ -14,22 +14,22 @@ public class Discografia {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_discografia;
+  public int idDiscografia;
 
   public String titulo;
   public String bio;
   public String tipo;
 
   @ManyToOne
-  @JoinColumn(name = "id_gravadora")
+  @JoinColumn(name = "idGravadora")
   private Gravadora gravadora;
 
   @ManyToOne
-  @JoinColumn(name = "id_produtora")
+  @JoinColumn(name = "idProdutora")
   private Produtora produtora;
   
   public Discografia(int id, String titulo, String bio, String tipo) {
-    this.id_discografia = id;
+    this.idDiscografia = id;
     this.titulo = titulo;
     this.bio = bio;
     this.tipo = tipo;

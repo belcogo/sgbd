@@ -13,19 +13,19 @@ import jakarta.persistence.ManyToOne;
 public class Funcao {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_funcao;
+  public int idFuncao;
 
   public String tipo; // todo: create enum!
 
   @ManyToOne
-  @JoinColumn(name = "id_artista")
+  @JoinColumn(name = "idArtista")
   public Artista artista;
 
   @ManyToOne
-  @JoinColumn(name = "id_musica")
+  @JoinColumn(name = "idMusica")
   public Musica musica;
 
   public Funcao (int id){
-    this.id_funcao = id;
+    this.idFuncao = id;
   }
 }

@@ -14,17 +14,17 @@ public class Lancamento {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int id_lancamento;
+  public int idLancamento;
 
   public String data;
   public String plataformas;
 
   @OneToOne
-  @JoinColumn(name = "id_discografia")
+  @JoinColumn(name = "idDiscografia")
   public Discografia discografia;
 
   public Lancamento(int id, String data, String plataformas) {
-    this.id_lancamento = id;
+    this.idLancamento = id;
     this.data = data;
     this.plataformas = plataformas;
   }
