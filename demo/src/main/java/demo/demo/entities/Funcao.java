@@ -9,7 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-@Table(name = "tabela_funcao")
+@Table(name = "funcoes")
 public class Funcao {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
