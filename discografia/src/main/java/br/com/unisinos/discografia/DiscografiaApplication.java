@@ -1,13 +1,13 @@
-package demo.demo;
+package br.com.unisinos.discografia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class DiscografiaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(DiscografiaApplication.class, args);
 	}
 
 }

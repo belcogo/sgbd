@@ -1,4 +1,4 @@
-package demo.demo.entities;
+package br.com.unisinos.discografia.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
