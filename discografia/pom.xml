@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>discografia</groupId>
-	<artifactId>br.com.unisinos.discografia</artifactId>
+	<artifactId>discografia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>discografia</name>
 	<description>Demo project for Spring Boot</description>
