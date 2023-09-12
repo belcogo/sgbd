@@ -5,20 +5,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "gravadoras")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Gravadora {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int idGravadora;  
+  public Long idGravadora;
 
   public String nome;
   public String enderecoMatriz;
-
-  public Gravadora (int id, String nome, String enderecoMatriz){
-    this.idGravadora = id;
-    this.nome = nome;
-    this.enderecoMatriz = enderecoMatriz;
-  }
 }

@@ -14,7 +14,7 @@ public class Discografia {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int idDiscografia;
+  public Long idDiscografia;
 
   public String titulo;
   public String bio;
@@ -28,7 +28,7 @@ public class Discografia {
   @JoinColumn(name = "idProdutora")
   private Produtora produtora;
   
-  public Discografia(int id, String titulo, String bio, String tipo) {
+  public Discografia(Long id, String titulo, String bio, String tipo) {
     this.idDiscografia = id;
     this.titulo = titulo;
     this.bio = bio;

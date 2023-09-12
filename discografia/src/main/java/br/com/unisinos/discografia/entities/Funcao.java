@@ -7,13 +7,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "funcoes")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Funcao {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int idFuncao;
+  public Long idFuncao;
 
   public String tipo; // todo: create enum!
 
@@ -25,7 +29,7 @@ public class Funcao {
   @JoinColumn(name = "idMusica")
   public Musica musica;
 
-  public Funcao (int id){
+  public Funcao (Long id){
     this.idFuncao = id;
   }
 }

@@ -7,14 +7,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "lancamentos")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lancamento {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public int idLancamento;
+  public Long idLancamento;
 
   public String data;
   public String plataformas;
@@ -22,10 +26,4 @@ public class Lancamento {
   @OneToOne
   @JoinColumn(name = "idDiscografia")
   public Discografia discografia;
-
-  public Lancamento(int id, String data, String plataformas) {
-    this.idLancamento = id;
-    this.data = data;
-    this.plataformas = plataformas;
-  }
 }

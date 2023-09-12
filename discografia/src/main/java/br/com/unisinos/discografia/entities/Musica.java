@@ -7,13 +7,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "musicas")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Musica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int idMusica;
+    public Long idMusica;
 
     public String nome;
     public String tempo;
@@ -25,10 +29,4 @@ public class Musica {
     @ManyToOne
     @JoinColumn(name = "idGenero")
     private Genero genero;
-
-    public Musica (int id, String nome, String tempo){
-        this.idMusica = id;
-        this.nome = nome;
-        this.tempo = tempo;
-    }
 }
