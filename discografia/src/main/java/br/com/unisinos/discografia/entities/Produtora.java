@@ -1,5 +1,6 @@
 package br.com.unisinos.discografia.entities;
 
+import br.com.unisinos.discografia.interfaces.IEmpresa;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,12 +14,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "produtoras")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Produtora {
+public class Produtora implements IEmpresa {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Long idProdutora;
-
-  public String nome;
-  public String enderecoMatriz;
 }
