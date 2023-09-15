@@ -1,5 +1,6 @@
 package br.com.unisinos.discografia.entities;
 
+import br.com.unisinos.enums.TipoDiscografiaEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,7 @@ public class Discografia {
 
   public String titulo;
   public String bio;
-  public String tipo;
+  public TipoDiscografiaEnum tipo;
 
   @ManyToOne
   @JoinColumn(name = "idGravadora")
@@ -32,7 +33,7 @@ public class Discografia {
   @JoinColumn(name = "idProdutora")
   private Produtora produtora;
   
-  public Discografia(Long id, String titulo, String bio, String tipo) {
+  public Discografia(Long id, String titulo, String bio, TipoDiscografiaEnum tipo) {
     this.idDiscografia = id;
     this.titulo = titulo;
     this.bio = bio;

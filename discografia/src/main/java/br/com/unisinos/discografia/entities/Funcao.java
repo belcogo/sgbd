@@ -1,5 +1,6 @@
 package br.com.unisinos.discografia.entities;
 
+import br.com.unisinos.enums.TipoFuncaoEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Funcao {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Long idFuncao;
 
-  public String tipo; // todo: create enum!
+  public TipoFuncaoEnum tipo;
 
   @ManyToOne
   @JoinColumn(name = "idArtista")
