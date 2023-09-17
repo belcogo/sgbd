@@ -24,9 +24,9 @@ public class Musica {
 
     @ManyToOne
     @JoinColumn(name = "idDiscografia")
-    private Discografia discografia;
+    public Discografia discografia;
 
     @ManyToOne
     @JoinColumn(name = "idGenero")
-    private Genero genero;
+    public Genero genero;
 }
