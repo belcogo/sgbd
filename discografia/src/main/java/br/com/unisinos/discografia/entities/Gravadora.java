@@ -1,6 +1,5 @@
 package br.com.unisinos.discografia.entities;
 
-import br.com.unisinos.abstracts.IEmpresa;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +12,15 @@ import lombok.NoArgsConstructor;
 @Table(name = "gravadoras")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Gravadora extends IEmpresa {
+public class Gravadora {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Long idGravadora;
+  public String nome;
+  public String enderecoMatriz;
+
+  public Gravadora(String nome, String enderecoMatriz) {
+    this.nome = nome;
+    this.enderecoMatriz = enderecoMatriz;
+  }
 }
