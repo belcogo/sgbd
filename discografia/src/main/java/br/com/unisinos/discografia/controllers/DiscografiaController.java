@@ -25,7 +25,6 @@ public class DiscografiaController {
             log.error("Ocorreu um erro ao salvar discografia: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // TODO: create example
     }
 
     @GetMapping

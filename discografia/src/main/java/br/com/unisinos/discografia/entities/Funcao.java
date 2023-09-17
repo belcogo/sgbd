@@ -32,9 +32,4 @@ public class Funcao {
   @ManyToOne
   @JoinColumn(name = "idMusica")
   public Musica musica;
-
-  public Funcao(Long id, TipoFuncaoEnum tipo) {
-    this.idFuncao = id;
-    this.tipo = tipo;
-  }
 }

@@ -25,7 +25,6 @@ public class MusicaController {
             log.error("Ocorreu um erro ao salvar musica: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // TODO: create example
     }
 
     @GetMapping

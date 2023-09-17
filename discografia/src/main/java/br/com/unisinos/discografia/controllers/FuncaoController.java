@@ -1,7 +1,11 @@
 package br.com.unisinos.discografia.controllers;
 
+import br.com.unisinos.discografia.entities.Artista;
 import br.com.unisinos.discografia.entities.Funcao;
+import br.com.unisinos.discografia.entities.Musica;
+import br.com.unisinos.discografia.repository.ArtistaRepository;
 import br.com.unisinos.discografia.repository.FuncaoRepository;
+import br.com.unisinos.discografia.repository.MusicaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +15,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
-@RequestMapping("/funcaos")
+@RequestMapping("/funcoes")
 public class FuncaoController {
 
     @Autowired
@@ -25,7 +29,6 @@ public class FuncaoController {
             log.error("Ocorreu um erro ao salvar funcao: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // TODO: create example
     }
 
     @GetMapping

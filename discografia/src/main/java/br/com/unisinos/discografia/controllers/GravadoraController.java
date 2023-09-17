@@ -25,7 +25,6 @@ public class GravadoraController {
             log.error("Ocorreu um erro ao salvar gravadora: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // Gravadora gravadora = new Gravadora(1l, "Gravadora TAS", "Rua Cornelia, 22");
     }
 
     @GetMapping

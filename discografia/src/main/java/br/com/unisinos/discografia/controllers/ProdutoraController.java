@@ -25,7 +25,6 @@ public class ProdutoraController {
             log.error("Ocorreu um erro ao salvar produtora: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // Produtora produtora = new Produtora(1l, "Produtora TAS", "Rua Cornelia, 23");
     }
 
     @GetMapping

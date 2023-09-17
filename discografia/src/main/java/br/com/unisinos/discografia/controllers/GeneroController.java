@@ -25,7 +25,6 @@ public class GeneroController {
             log.error("Ocorreu um erro ao salvar genero: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // TODO: create example
     }
 
     @GetMapping

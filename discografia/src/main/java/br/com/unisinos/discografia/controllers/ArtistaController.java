@@ -25,7 +25,6 @@ public class ArtistaController {
             log.error("Ocorreu um erro ao salvar artista: ", ex);
             return ResponseEntity.internalServerError().build();
         }
-        // Artista artista = new Artista(1l, "Taylor Alisson Swift", "Taylor Swift", "Cantora e compositora de sucesso global com um estilo musical diversificado.");
     }
 
     @GetMapping
