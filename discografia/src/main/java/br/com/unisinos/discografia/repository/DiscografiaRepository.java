@@ -4,12 +4,9 @@
  */
 package br.com.unisinos.discografia.repository;
 
+import br.com.unisinos.discografia.entities.Artista;
 import br.com.unisinos.discografia.entities.Discografia;
 import org.springframework.data.repository.CrudRepository;
 
-/**
- *
- * @author belcogo
- */
 public interface DiscografiaRepository extends CrudRepository<Discografia, Long> {
 }

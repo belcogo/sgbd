@@ -1,7 +1,9 @@
 package br.com.unisinos.discografia.controllers;
 
 import br.com.unisinos.discografia.entities.Discografia;
+import br.com.unisinos.discografia.entities.Musica;
 import br.com.unisinos.discografia.repository.DiscografiaRepository;
+import br.com.unisinos.discografia.repository.MusicaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,9 @@ public class DiscografiaController {
 
     @Autowired
     DiscografiaRepository discografiaRepository;
+
+    @Autowired
+    MusicaRepository musicaRepository;
 
     @PostMapping
     public ResponseEntity<Discografia> adicionarDiscografia(@RequestBody Discografia discografia) {
@@ -43,4 +48,16 @@ public class DiscografiaController {
         return ResponseEntity.ok(discografia.get());
     }
 
+    @GetMapping("/{id}/musicas")
+    public ResponseEntity<List<Musica>> obterMusicas(@PathVariable Long id) {
+        Optional<Discografia> discografia = discografiaRepository.findById(id);
+
+        if (discografia.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        List<Musica> musicas = (List<Musica>) musicaRepository.findByDiscografia(discografia.get());
+
+        return ResponseEntity.ok(musicas);
+    }
 }

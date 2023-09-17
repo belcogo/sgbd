@@ -1,6 +1,6 @@
 package br.com.unisinos.discografia.entities;
 
-import br.com.unisinos.enums.TipoDiscografiaEnum;
+import br.com.unisinos.discografia.enums.TipoDiscografiaEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
