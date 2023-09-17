@@ -31,16 +31,9 @@ public class Discografia {
 
   @ManyToOne
   @JoinColumn(name = "idGravadora")
-  private Gravadora gravadora;
+  public Gravadora gravadora;
 
   @ManyToOne
   @JoinColumn(name = "idProdutora")
-  private Produtora produtora;
-
-  public Discografia(Long id, String titulo, String bio, TipoDiscografiaEnum tipo) {
-    this.idDiscografia = id;
-    this.titulo = titulo;
-    this.bio = bio;
-    this.tipo = tipo;
-  }
+  public Produtora produtora;
 }

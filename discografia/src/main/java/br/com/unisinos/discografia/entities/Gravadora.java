@@ -18,9 +18,4 @@ public class Gravadora {
   public Long idGravadora;
   public String nome;
   public String enderecoMatriz;
-
-  public Gravadora(String nome, String enderecoMatriz) {
-    this.nome = nome;
-    this.enderecoMatriz = enderecoMatriz;
-  }
 }

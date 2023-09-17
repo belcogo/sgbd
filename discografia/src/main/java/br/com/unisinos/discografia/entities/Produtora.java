@@ -20,9 +20,4 @@ public class Produtora {
 
   public String nome;
   public String enderecoMatriz;
-
-  public Produtora(String nome, String enderecoMatriz) {
-    this.nome = nome;
-    this.enderecoMatriz = enderecoMatriz;
-  }
 }
