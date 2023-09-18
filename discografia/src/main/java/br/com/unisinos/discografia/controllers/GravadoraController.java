@@ -1,6 +1,8 @@
 package br.com.unisinos.discografia.controllers;
 
+import br.com.unisinos.discografia.entities.Discografia;
 import br.com.unisinos.discografia.entities.Gravadora;
+import br.com.unisinos.discografia.repository.DiscografiaRepository;
 import br.com.unisinos.discografia.repository.GravadoraRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class GravadoraController {
 
     @Autowired
     GravadoraRepository gravadoraRepository;
+
+    @Autowired
+    DiscografiaRepository discografiaRepository;
 
     @PostMapping
     public ResponseEntity<Gravadora> adicionarGravadora(@RequestBody Gravadora gravadora) {
@@ -43,4 +48,16 @@ public class GravadoraController {
         return ResponseEntity.ok(gravadora.get());
     }
 
+    @GetMapping("/{id}/discografias")
+    public ResponseEntity<List<Discografia>> obterDiscografias(@PathVariable Long id) {
+        Optional<Gravadora> gravadora = gravadoraRepository.findById(id);
+
+        if (gravadora.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        List<Discografia> discografias = (List<Discografia>) discografiaRepository.findByGravadora(gravadora.get());
+
+        return ResponseEntity.ok(discografias);
+    }
 }

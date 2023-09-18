@@ -4,9 +4,12 @@
  */
 package br.com.unisinos.discografia.repository;
 
-import br.com.unisinos.discografia.entities.Artista;
 import br.com.unisinos.discografia.entities.Discografia;
+import br.com.unisinos.discografia.entities.Gravadora;
+
 import org.springframework.data.repository.CrudRepository;
 
 public interface DiscografiaRepository extends CrudRepository<Discografia, Long> {
+
+  Iterable<Discografia> findByGravadora(Gravadora gravadora);
 }

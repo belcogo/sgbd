@@ -53,13 +53,19 @@ public class ArtistaController {
     @GetMapping("/{id}/funcoes")
     public ResponseEntity<List<Funcao>> obterFuncoes(@PathVariable Long id, @PathParam("tipo") String tipo) {
         Optional<Artista> artista = artistaRepository.findById(id);
-        TipoFuncaoEnum tipoFuncaoEnum = TipoFuncaoEnum.valueOf(tipo.toUpperCase(Locale.ROOT));
 
         if (artista.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
-       List<Funcao> funcoes = funcaoRepository.findByArtistaAndTipo(artista.get(), tipoFuncaoEnum);
+        if (tipo == null) {
+            List<Funcao> funcoes = funcaoRepository.findByArtista(artista.get());
+            return ResponseEntity.ok(funcoes);
+        }
+
+        TipoFuncaoEnum tipoFuncaoEnum = TipoFuncaoEnum.valueOf(tipo.toUpperCase(Locale.ROOT));
+
+        List<Funcao> funcoes = funcaoRepository.findByArtistaAndTipo(artista.get(), tipoFuncaoEnum);
 
         return ResponseEntity.ok(funcoes);
     }

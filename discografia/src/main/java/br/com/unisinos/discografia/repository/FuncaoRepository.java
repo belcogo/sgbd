@@ -17,4 +17,6 @@ import java.util.List;
  */
 public interface FuncaoRepository extends CrudRepository<Funcao, Long> {
     List<Funcao> findByArtistaAndTipo(Artista artista, TipoFuncaoEnum tipo);
+
+    List<Funcao> findByArtista(Artista artista);
 }
